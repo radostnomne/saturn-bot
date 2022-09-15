@@ -31,7 +31,7 @@ bot.onText(/\/start/, async (msg) => {
     db.run(`INSERT INTO Chats (chatId) VALUES (${msg.chat.id})`); // TODO: add  WHERE NOT EXISTS(WHERE chatId = "${msg.chat.id})
     const { en, by, ru, pl } = await getRandomWord();
     const weather = await getWeather();
-    const message = `🇷🇺Слово дня: ${ru}\n🏴󠁧󠁢󠁥󠁮󠁧󠁿English: ${en}\n🇵🇱Polish: ${pl}\n🇧🇾Беларускі: ${by}\n\n\n${weather}`;
+    const message = `🇷🇺Слово дня: ${ru}\n🇬🇧English: ${en}\n🇵🇱Polish: ${pl}\n🇧🇾Беларускі: ${by}\n\n\n${weather}`;
     bot.sendMessage(
       msg.chat.id,
       message
@@ -53,7 +53,7 @@ bot.onText(/\/stop/, (msg) => {
 nodeCron.schedule("5 * * * * *", async () => {
   const { en, by, ru, pl } = await getRandomWord();
   const weather = await getWeather();
-  const message = `🇷🇺Слово дня: ${ru}\n🏴󠁧󠁢󠁥󠁮󠁧󠁿English: ${en}\n🇵🇱Polish: ${pl}\n🇧🇾Беларускі: ${by}\n\n\n${weather}`;
+  const message = `🇷🇺Слово дня: ${ru}\n🇬🇧English: ${en}\n🇵🇱Polish: ${pl}\n🇧🇾Беларускі: ${by}\n\n\n${weather}`;
   db.each("SELECT id, chatId FROM Chats", (err, row) => {
     bot.sendMessage(row.chatId, message);
   });

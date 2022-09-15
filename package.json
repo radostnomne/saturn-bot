@@ -16,7 +16,9 @@
     "dotenv": "^16.0.2",
     "got": "^12.4.1",
     "node-cron": "^3.0.2",
-    "node-telegram-bot-api": "^0.59.0"
+    "node-telegram-bot-api": "^0.59.0",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

@@ -16,4 +16,4 @@ jobs:
           heroku_app_name: "saturn-tg-bot"
           heroku_email: "konyaev.p@gmail.com"
         env:
-          TOKEN: ${{TELEGRAM_TOKEN}}
+          TOKEN: ${{secrets.TELEGRAM_TOKEN}}

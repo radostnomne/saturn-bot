@@ -5,13 +5,23 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.mjs",
+    "dev": "nodemon src/index.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vitalets/google-translate-api": "^8.0.0",
-    "got": "^12.4.1"
+    "dotenv": "^16.0.2",
+    "got": "^12.4.1",
+    "node-cron": "^3.0.2",
+    "node-telegram-bot-api": "^0.59.0",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.0",
+    "@vitalets/google-translate-api": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

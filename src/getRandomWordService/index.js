@@ -21,6 +21,7 @@ export const getRandomWord = async () => {
     console.log(
       `Translated words: [${JSON.stringify(translatedWord, null, 2)}]`
     );
+    return translatedWord;
   } catch (e) {
     console.error(`Error while getting random word: [${e.message}]`);
   }

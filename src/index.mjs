@@ -1,12 +1,13 @@
-import TelegramBot from "node-telegram-bot-api";
 import dotenv from "dotenv";
+dotenv.config();
+
+import TelegramBot from "node-telegram-bot-api";
 import sqlite3 from "sqlite3";
 import nodeCron from "node-cron";
 import { botIsWorksForChat } from "./helpers/index.mjs";
 import { getRandomWord } from './services/word.service.mjs';
 import { getWeather } from './services/weather.service.mjs';
 
-dotenv.config();
 const db = new sqlite3.Database("database.db");
 
 const chats = [];

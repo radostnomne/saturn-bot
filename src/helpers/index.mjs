@@ -1,2 +1,1 @@
-export const botIsWorksForChat = (chats, chatId) =>
-  chats.findIndex((chatID) => chatID === chatId) >= 0;
+export const botIsWorksForChat = (chats, chatId) => chats.findIndex((chatID) => chatID === chatId) >= 0;

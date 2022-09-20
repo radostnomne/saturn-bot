@@ -45,7 +45,7 @@ bot.onText(/\/stop/, (msg) => {
   bot.sendMessage(msg.chat.id, 'We stopped bot for you');
 });
 
-nodeCron.schedule('0 10 * * *', async () => {
+const job = nodeCron.schedule('0 10 * * *', async () => {
   const { en, by, ru, pl } = await getRandomWord();
   const weather = await getWeather();
   const message = `🇷🇺Слово дня: ${ru}\n🇬🇧English: ${en}\n🇵🇱Polish: ${pl}\n🇧🇾Беларускі: ${by}\n\n\n${weather}`;
@@ -53,3 +53,5 @@ nodeCron.schedule('0 10 * * *', async () => {
     bot.sendMessage(row.chatId, message);
   });
 });
+
+job.start();
